@@ -24,7 +24,7 @@ $fatch_msg = mysqli_fetch_assoc($massege)
   ?>
 
   <section class="games">
-
+    <div class="box">
     <?php
     $select_games = mysqli_query($conn, "SELECT * FROM `games` LIMIT 32") or die('query failed');
     if (mysqli_num_rows($select_games) > 0) {
@@ -38,13 +38,14 @@ $fatch_msg = mysqli_fetch_assoc($massege)
           </video>
           <div class="details">
             <img src="<?php echo $fetch_games['image'] ?>" alt="" class="img-game">
-            <h1> <?php echo $fetch_games['name'] ?></h1>
+            <h5> <?php echo $fetch_games['name'] ?></h5>
             <button href="view_page.php?pid=<?php echo $fetch_games['id']; ?>" class="btn2">Download</button>
-            <h4><?php echo $fetch_games['price'] ?></h4>
+            <p><?php echo $fetch_games['price'] ?></p>
           </div>
         </div>
     <?php }
     } ?>
+    </div>
   </section>
   <?php
   @include 'footer.php';
